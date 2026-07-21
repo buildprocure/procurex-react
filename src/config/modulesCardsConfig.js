@@ -1,0 +1,101 @@
+export const modulesCardsConfig = {
+  admin: [
+    {
+      id: "supplier-onboarding",
+      title: "Supplier Onboarding",
+      description: "Manage and onboard new suppliers",
+      status: "active",
+      path: "/supplier-onboarding"
+    },
+    {
+      id: "customer-config",
+      title: "Customer Config",
+      description: "Configure customer accounts and settings",
+      status: "active",
+      path: "/customer-config"
+    },
+    {
+      id: "purchase-orders",
+      title: "Purchase Orders Management",
+      description: "Create and manage purchase orders",
+      status: "coming-soon",
+      path: "/purchase-orders"
+    },
+    {
+      id: "vendor-invoices",
+      title: "Vendor Invoice Processing",
+      description: "Process vendor invoices and payments",
+      status: "coming-soon",
+      path: "/vendor-invoices"
+    },
+    {
+      id: "compliance",
+      title: "Compliance & Audit",
+      description: "Track compliance and audit reports",
+      status: "coming-soon",
+      path: "/compliance"
+    },
+    {
+      id: "analytics",
+      title: "Analytics & Reports",
+      description: "View analytics and generate reports",
+      status: "coming-soon",
+      path: "/analytics"
+    }
+  ],
+  supplier: [
+    {
+      id: "supplier-onboarding",
+      title: "Supplier Onboarding",
+      description: "Complete your supplier profile",
+      status: "active",
+      path: "/supplier-onboarding"
+    },
+    {
+      id: "purchase-orders",
+      title: "Purchase Orders",
+      description: "View your purchase orders",
+      status: "active",
+      path: "/purchase-orders"
+    },
+    {
+      id: "vendor-invoices",
+      title: "My Invoices",
+      description: "Submit and track your invoices",
+      status: "active",
+      path: "/vendor-invoices"
+    }
+  ],
+  buyer: [
+    {
+      id: "supplier-onboarding",
+      title: "Supplier Onboarding",
+      description: "View approved suppliers",
+      status: "active",
+      path: "/supplier-onboarding"
+    },
+    {
+      id: "purchase-orders",
+      title: "Purchase Orders",
+      description: "Create and manage purchase orders",
+      status: "active",
+      path: "/purchase-orders"
+    }
+  ],
+  csr: [
+    {
+      id: "supplier-onboarding",
+      title: "Supplier Onboarding",
+      description: "Manage supplier onboarding process",
+      status: "active",
+      path: "/supplier-onboarding"
+    },
+    {
+      id: "vendor-invoices",
+      title: "Vendor Invoices",
+      description: "Process vendor invoices",
+      status: "active",
+      path: "/vendor-invoices"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #0E698B;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Removed global letter-spacing so it doesn't affect standard text */
+}
+
+.nav-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px; /* Spacing between logo, divider, and title */
+}
+
+.logo {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #ffffff;
+  letter-spacing: -0.01em; /* Slight tightening makes bold brand names look sleeker */
+  
+}
+
+/* Subtle separator line */
+.nav-divider {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 300;
+  font-size: 18px;
+  user-select: none;
+}
+
+/* Secondary project name */
+.project-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85); /* Slightly softer white to make the logo pop */
+  letter-spacing: 0.05em;
+  text-transform: uppercase; /* Optional: gives it a clean technical badge feel */
+  
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-btn,
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.settings-btn:hover,
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}

@@ -1,16 +1,28 @@
-# React + Vite
+# procurex-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BuildProcure's new React frontend. This is **not** a full port of the existing PHP app — it's a fresh app that hosts new modules, built and scoped independently, as the company moves off PHP incrementally. `procurex` (PHP) stays the source of truth for a given module's business logic until that module is migrated here.
 
-Currently, two official plugins are available:
+## Modules planned/in progress
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Supplier onboarding** — currently a manual process; legacy reference is `procurex/Supplier`. First module being built here.
+- **Customer config** — planned, not started.
+- (add new modules to this list as they're scoped)
 
-## React Compiler
+Treat each module as its own vertical slice (routes, components, API client, types) rather than assuming shared scope across modules unless the code says otherwise.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Related repos
 
-## Expanding the ESLint configuration
+- `procurex` — legacy PHP app; authoritative source for existing forms, validation, and DB schema for modules not yet migrated.
+- `bp-simplesamlphp` — SAML auth service.
+- `buildprocure_mcp_config` — internal MCP tooling for analyzing the PHP legacy code and generating migration scaffolding (`analyze_legacy_php_module`, `build_react_conversion_plan`, `generate_backend_api_bridge_files`, etc.).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Development
+
+```bash
+npm run dev       # start Vite dev server
+npm run build     # production build
+npm run lint      # ESLint
+npm run preview   # preview a production build locally
+```
+
+Stack: Vite + React 19, JS/JSX (no TypeScript, router, or state library added yet). No test runner configured yet.

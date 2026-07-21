@@ -1,0 +1,71 @@
+.module-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.module-card.active {
+  cursor: pointer;
+}
+
+.module-card.active:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: #0f172a;
+}
+
+.module-card.coming-soon {
+  opacity: 0.6;
+  background: #f8f9fa;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 8px 0;
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-content p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.status-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.coming-soon {
+  background: #fef3c7;
+  color: #92400e;
+}

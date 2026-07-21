@@ -1,0 +1,79 @@
+.dashboard-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dashboard-page h1 {
+  margin: 0 0 8px 0;
+  color: #0f172a;
+  font-size: 32px;
+}
+
+.subtitle {
+  color: #64748b;
+  margin: 0 0 32px 0;
+  font-size: 16px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card-wrapper {
+  cursor: grab;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.card-wrapper:active {
+  cursor: grabbing;
+}
+
+.card-wrapper.dragging {
+  background: #0284c7;
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.card-wrapper:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-wrapper:hover {
+    transform: scale(1);
+  }
+}
+.card-wrapper.drag-over {
+  background: #0284c7;
+  border-radius: 8px;
+  opacity: 0.85;
+}
+
+.card-wrapper.drag-over::after {
+  content: 'Drop here';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(14, 165, 233, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  pointer-events: none;
+}

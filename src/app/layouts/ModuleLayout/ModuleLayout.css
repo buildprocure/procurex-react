@@ -1,0 +1,23 @@
+.module-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.module-body {
+  display: flex;
+  flex: 1;
+}
+
+.module-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.right-panel {
+  width: 200px;
+  background: white;
+  border-left: 1px solid #e2e8f0;
+}
