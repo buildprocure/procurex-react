@@ -9,6 +9,7 @@ function NotFoundPage() {
     <div style={{ padding: '40px', textAlign: 'center' }}>
       <h1>404 - Page Not Found</h1>
       <p>The page you requested does not exist.</p>
+      <button onClick={() => window.history.back()}>Go Back</button>
     </div>
   )
 }

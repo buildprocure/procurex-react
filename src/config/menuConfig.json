@@ -1,0 +1,110 @@
+{
+  "supplier-onboarding": {
+    "all": [
+      {
+        "label": "Overview",
+        "path": "/supplier-onboarding/overview",
+        "icon": "home"
+      }
+    ],
+    "admin": [
+      {
+        "label": "Overview",
+        "path": "/supplier-onboarding/overview",
+        "icon": "home"
+      },
+      {
+        "label": "All Suppliers",
+        "path": "/supplier-onboarding/all",
+        "icon": "users"
+      },
+      {
+        "label": "Pending Approval",
+        "path": "/supplier-onboarding/pending",
+        "icon": "clock"
+      },
+      {
+        "label": "Approved",
+        "path": "/supplier-onboarding/approved",
+        "icon": "check"
+      },
+      {
+        "label": "Settings",
+        "path": "/supplier-onboarding/settings",
+        "icon": "gear"
+      }
+    ],
+    "supplier": [
+      {
+        "label": "My Profile",
+        "path": "/supplier-onboarding/profile",
+        "icon": "user"
+      },
+      {
+        "label": "Documents",
+        "path": "/supplier-onboarding/documents",
+        "icon": "file"
+      },
+      {
+        "label": "Status",
+        "path": "/supplier-onboarding/status",
+        "icon": "info"
+      }
+    ],
+    "csr": [
+      {
+        "label": "Overview",
+        "path": "/supplier-onboarding/overview",
+        "icon": "home"
+      },
+      {
+        "label": "All Suppliers",
+        "path": "/supplier-onboarding/all",
+        "icon": "users"
+      },
+      {
+        "label": "Pending Approval",
+        "path": "/supplier-onboarding/pending",
+        "icon": "clock"
+      }
+    ],
+    "buyer": [
+      {
+        "label": "Overview",
+        "path": "/supplier-onboarding/overview",
+        "icon": "home"
+      },
+      {
+        "label": "Approved Suppliers",
+        "path": "/supplier-onboarding/approved",
+        "icon": "check"
+      }
+    ]
+  },
+  "customer-config": {
+    "all": [
+      {
+        "label": "Overview",
+        "path": "/customer-config/overview",
+        "icon": "home"
+      }
+    ],
+    "admin": [
+      {
+        "label": "Overview",
+        "path": "/customer-config/overview",
+        "icon": "home"
+      },
+      {
+        "label": "All Customers",
+        "path": "/customer-config/all",
+        "icon": "users"
+      },
+      {
+        "label": "Settings",
+        "path": "/customer-config/settings",
+        "icon": "gear"
+      }
+    ]
+  }
+}

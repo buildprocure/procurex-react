@@ -25,4 +25,16 @@ npm run lint      # ESLint
 npm run preview   # preview a production build locally
 ```
 
+## UI Direction
+Horizontal Nav which ontains Loggedin user name or Login button in first landing page. It will not have vertical navs (left right)
+This landing page contains Cars of modules, supplier onboading, customer config and future others. These cards will be displayed based on the roles and access, so admin will have access to all cards, supplier has their own, buyer has their own and also there can be some cards subscription basis.
+Once the user clicks on cars, it should open new page when we will have little different horizontal nav, and it should contains left nav, which should have menus and right nav which has log out and some other infos. So those three navs will be same across the modules on this app, so should be global similarly buttons and pagination if we have.
+
+Login Authentication, two ways - SSO and from users table using java backend
+
+## Backend
+Backend for this react project should be in same Procurex PHP for now. Later I will move it to java.
+
+
+
 Stack: Vite + React 19, JS/JSX (no TypeScript, router, or state library added yet). No test runner configured yet.
