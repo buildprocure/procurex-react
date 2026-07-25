@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './TopNav.css'
+import { logout } from '../../auth/auth'
 
 export function TopNav({ userName = 'Alex Morgan' }) {
   const navigate = useNavigate()
@@ -9,7 +10,8 @@ export function TopNav({ userName = 'Alex Morgan' }) {
   const handleLogout = () => {
     // TODO: Implement logout logic
     console.log('Logout clicked')
-    navigate('/')
+    logout()
+
   }
 
   const handleSettings = () => {
@@ -18,17 +20,19 @@ export function TopNav({ userName = 'Alex Morgan' }) {
   }
 
   return (
-    <header class="top-nav">
-      <div class="nav-left">
-        <h1 class="logo">{companyName}</h1>
-        <span class="nav-divider">|</span>
-        <span class="project-name">{projectName}</span>
+    <header className="top-nav">
+      <div className="nav-left">
+        <h1 className="logo">{companyName}</h1>
+        <span className="nav-divider">|</span>
+        <span className="project-name">{projectName}</span>
       </div>
 
-      <div class="nav-right">
-        <button class="settings-btn" aria-label="Settings">⚙️</button>
-        <span class="user-name">Alex Morgan</span>
-        <button class="logout-btn">Logout</button>
+      <div className="nav-right">
+        <button className="settings-btn" aria-label="Settings" onClick={handleSettings}>⚙️</button>
+        <span className="user-name">{userName}</span>
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </header>
   )

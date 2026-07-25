@@ -14,11 +14,14 @@ function NotFoundPage() {
   )
 }
 
-function App() {
-  // TODO: Get userRole and userName from auth context in Phase 3
-  const userRole = 'admin' // Change to 'supplier', 'buyer', 'csr' to test different roles
-  const userName = 'Alex Morgan'
+function App({ user }) {
+  // user comes from main.jsx's checkAuth() call against the Java backend.
+  // userRole falls back to 'admin' until the backend actually sends real
+  // roles - see Known gaps in the auth doc.
+  const userName = user?.name || 'Unknown user'
+  const userRole = user?.role || 'admin'
 
+    console.log('Object User: ', user)
   return (
     <BrowserRouter>
       <Routes>
