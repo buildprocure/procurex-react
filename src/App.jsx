@@ -1,8 +1,25 @@
+import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { DashboardPage } from './modules/dashboard/pages/DashboardPage'
-import { SupplierOnboardingPage } from './modules/supplier-onboarding/pages/SupplierOnboardingPage'
-import { CustomerConfigPage } from './modules/customer-config/pages/CustomerConfigPage'
 import './App.css'
+
+const DashboardPage = lazy(() =>
+  import('./modules/dashboard/pages/DashboardPage').then((m) => ({ default: m.DashboardPage }))
+)
+const SupplierOnboardingPage = lazy(() =>
+  import('./modules/supplier-onboarding/pages/SupplierOnboardingPage').then((m) => ({
+    default: m.SupplierOnboardingPage,
+  }))
+)
+const CustomerConfigPage = lazy(() =>
+  import('./modules/customer-config/pages/CustomerConfigPage').then((m) => ({
+    default: m.CustomerConfigPage,
+  }))
+)
+const AllSuppliersPage = lazy(() =>
+  import('./modules/supplier-onboarding/pages/AllSuppliersPage').then((m) => ({
+    default: m.AllSuppliersPage,
+  }))
+)
 
 function NotFoundPage() {
   return (
@@ -24,18 +41,24 @@ function App({ user }) {
     console.log('Object User: ', user)
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<DashboardPage userRole={userRole} userName={userName} />} />
-        <Route
-          path="/supplier-onboarding"
-          element={<SupplierOnboardingPage userRole={userRole} userName={userName} />}
-        />
-        <Route
-          path="/customer-config"
-          element={<CustomerConfigPage userRole={userRole} userName={userName} />}
-        />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<DashboardPage userRole={userRole} userName={userName} />} />
+          <Route
+            path="/supplier-onboarding"
+            element={<SupplierOnboardingPage userRole={userRole} userName={userName} />}
+          />
+          <Route
+            path="/supplier-onboarding/all"
+            element={<AllSuppliersPage userRole={userRole} userName={userName} />}
+          />
+          <Route
+            path="/customer-config"
+            element={<CustomerConfigPage userRole={userRole} userName={userName} />}
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }

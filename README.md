@@ -18,11 +18,15 @@ Treat each module as its own vertical slice (routes, components, API client, typ
 
 ## Development
 
+Uses pnpm exclusively (npm is only ever used once, to bootstrap pnpm itself: `npm install -g pnpm` or `corepack enable && corepack prepare pnpm --activate`).
+
 ```bash
-npm run dev       # start Vite dev server
-npm run build     # production build
-npm run lint      # ESLint
-npm run preview   # preview a production build locally
+pnpm install      # install dependencies
+pnpm dev          # start Vite dev server
+pnpm build        # production build
+pnpm lint         # ESLint
+pnpm preview      # preview a production build locally
+pnpm start        # run the production server (server.js) against dist/
 ```
 
 ## UI Direction
