@@ -1,18 +1,8 @@
-import { useNavigate } from 'react-router-dom'
 import './TopNav.css'
-import { logout } from '../../auth/auth'
 
-export function TopNav({ userName = 'Alex Morgan' }) {
-  const navigate = useNavigate()
+export function TopNav({ onToggleRightPanel }) {
   const companyName = import.meta.env.VITE_COMPANY_NAME
   const projectName = import.meta.env.VITE_PROJECT_NAME
-
-  const handleLogout = () => {
-    // TODO: Implement logout logic
-    console.log('Logout clicked')
-    logout()
-
-  }
 
   const handleSettings = () => {
     // TODO: Implement settings navigation
@@ -29,10 +19,11 @@ export function TopNav({ userName = 'Alex Morgan' }) {
 
       <div className="nav-right">
         <button className="settings-btn" aria-label="Settings" onClick={handleSettings}>⚙️</button>
-        <span className="user-name">{userName}</span>
-        <button className="logout-btn" onClick={handleLogout}>
-          Logout
-        </button>
+        {onToggleRightPanel && (
+          <button className="hamburger-btn" aria-label="Toggle panel" onClick={onToggleRightPanel}>
+            <span className="hamburger-icon">☰</span>
+          </button>
+        )}
       </div>
     </header>
   )
