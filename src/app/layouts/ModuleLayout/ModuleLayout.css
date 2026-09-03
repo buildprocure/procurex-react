@@ -17,7 +17,14 @@
 }
 
 .right-panel {
-  width: 200px;
+  width: 0;
+  overflow: hidden;
   background: white;
-  border-left: 1px solid #e2e8f0;
+  border-left: 1px solid transparent;
+  transition: width 0.2s ease;
+}
+
+.right-panel.open {
+  width: 200px;
+  border-left-color: #e2e8f0;
 }
