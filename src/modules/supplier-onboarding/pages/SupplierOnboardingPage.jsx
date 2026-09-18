@@ -3,7 +3,7 @@ import { useMenu } from '../../../shared/hooks/useMenu'
 import '../styles/SupplierOnboardingPage.css'
 
 export function SupplierOnboardingPage({ userRole = 'admin', userName = 'Alex Morgan' }) {
-  const menuItems = useMenu('supplier-onboarding', userRole)
+  const menuItems = useMenu('supplier-onboarding')
 
   return (
     <ModuleLayout menuItems={menuItems} userName={userName}>

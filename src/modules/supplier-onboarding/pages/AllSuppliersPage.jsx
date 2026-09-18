@@ -10,7 +10,7 @@ import '../styles/AllSuppliersPage.css'
 // A 401 here means the cookie is missing/expired - useful for testing the
 // auth handshake end to end.
 export function AllSuppliersPage({ userRole = 'admin', userName = 'Alex Morgan' }) {
-  const menuItems = useMenu('supplier-onboarding', userRole)
+  const menuItems = useMenu('supplier-onboarding')
   const [suppliers, setSuppliers] = useState([])
   const [status, setStatus] = useState('loading') // 'loading' | 'error' | 'ready'
   const [errorMessage, setErrorMessage] = useState('')
