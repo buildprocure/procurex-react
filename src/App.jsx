@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import { AccessControlProvider } from './app/providers/AccessControlProvider/AccessControlProvider'
 
 const DashboardPage = lazy(() =>
   import('./modules/dashboard/pages/DashboardPage').then((m) => ({ default: m.DashboardPage }))
@@ -40,26 +41,28 @@ function App({ user }) {
 
     console.log('Object User: ', user)
   return (
-    <BrowserRouter>
-      <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<DashboardPage userRole={userRole} userName={userName} />} />
-          <Route
-            path="/supplier-onboarding"
-            element={<SupplierOnboardingPage userRole={userRole} userName={userName} />}
-          />
-          <Route
-            path="/supplier-onboarding/all"
-            element={<AllSuppliersPage userRole={userRole} userName={userName} />}
-          />
-          <Route
-            path="/customer-config"
-            element={<CustomerConfigPage userRole={userRole} userName={userName} />}
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <AccessControlProvider userId={user?.email}>
+      <BrowserRouter>
+        <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<DashboardPage userRole={userRole} userName={userName} />} />
+            <Route
+              path="/supplier-onboarding"
+              element={<SupplierOnboardingPage userRole={userRole} userName={userName} />}
+            />
+            <Route
+              path="/supplier-onboarding/all"
+              element={<AllSuppliersPage userRole={userRole} userName={userName} />}
+            />
+            <Route
+              path="/customer-config"
+              element={<CustomerConfigPage userRole={userRole} userName={userName} />}
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </AccessControlProvider>
   )
 }
 

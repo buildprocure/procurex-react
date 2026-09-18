@@ -1,12 +1,15 @@
 import { useMemo } from 'react'
-import { menuConfig } from '../../config/menuConfig'
+import { useAccessControl } from './useAccessControl'
 
-export function useMenu(moduleName, userRole = 'admin') {
-  return useMemo(() => {
-    const moduleMenu = menuConfig[moduleName]
-    if (!moduleMenu) return []
+// Left-nav items for one module, filtered from the access-control API
+// response (see AccessControlProvider) instead of the old static
+// per-role config/menuConfig.js - what renders here now matches what the
+// backend says this user can actually open.
+export function useMenu(moduleName) {
+  const { menu } = useAccessControl()
 
-    // Get role-specific menu or fallback to 'all'
-    return moduleMenu[userRole] || moduleMenu.all || []
-  }, [moduleName, userRole])
+  return useMemo(
+    () => menu.filter((item) => item.module === moduleName),
+    [menu, moduleName]
+  )
 }

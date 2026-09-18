@@ -4,7 +4,7 @@ import { CustomerStatusChart } from '../components/CustomerStatusChart'
 import '../styles/CustomerConfigPage.css'
 
 export function CustomerConfigPage({ userRole = 'admin', userName = 'Alex Morgan' }) {
-  const menuItems = useMenu('customer-config', userRole)
+  const menuItems = useMenu('customer-config')
 
   return (
     <ModuleLayout menuItems={menuItems} userName={userName}>
